@@ -1,4 +1,6 @@
-package com.bartoszwalter.students.taxes;
+package com.bartoszwalter.students.taxes.services;
+
+import com.bartoszwalter.students.taxes.enums.FeePercentValues;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

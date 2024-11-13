@@ -1,4 +1,6 @@
-package com.bartoszwalter.students.taxes;
+package com.bartoszwalter.students.taxes.services;
+
+import com.bartoszwalter.students.taxes.enums.FeePercentValues;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -30,26 +32,21 @@ public class TaxCalculatorService {
         return preTaxIncome.multiply(FeePercentValues.PREVIOUS_SOCIAL_HEALTH_INSURANCE.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
     }
 
-
     public BigDecimal getTaxFreeIncome() {
         return BigDecimal.ZERO;
     }
-
 
     public BigDecimal getTaxDeductibleExpenses() {
         return BigDecimal.ZERO;
     }
 
-
     public BigDecimal getAdvanceTax() {
         return preTaxIncome.multiply(FeePercentValues.ADVANCE_TAX.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
     }
 
-
     public BigDecimal getAdvanceTaxPaid() {
         return getPreviousSocialHealthInsuranceFee().subtract(getTaxFreeIncome());
     }
-
 
     public BigDecimal getNetIncome() {
         BigDecimal totalDeductions = getSocialSecurityFee()
@@ -66,16 +63,13 @@ public class TaxCalculatorService {
                 .subtract(getSicknessInsuranceFee());
     }
 
-
     public BigDecimal getTaxedIncome() {
         return preTaxIncome.subtract(getTaxDeductibleExpenses());
     }
 
-
     public BigDecimal getTaxPaid() {
         return getAdvanceTax().subtract(getTaxFreeIncome());
     }
-
 
     public BigDecimal getPreTaxIncome() {
         return preTaxIncome;

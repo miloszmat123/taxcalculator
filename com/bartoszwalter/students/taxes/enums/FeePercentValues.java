@@ -1,4 +1,4 @@
-package com.bartoszwalter.students.taxes;
+package com.bartoszwalter.students.taxes.enums;
 
 import java.math.BigDecimal;
 
