@@ -2,7 +2,7 @@ package com.bartoszwalter.students.taxes.enums;
 
 import java.math.BigDecimal;
 
-public enum FeePercentValues {
+public enum ConstantValues {
     SOCIAL_SECURITY(9.76),
     HEALTH_INSURANCE(1.5),
     SICKNESS_INSURANCE(2.45),
@@ -15,7 +15,7 @@ public enum FeePercentValues {
 
     private final BigDecimal value;
 
-    FeePercentValues(double value) {
+    ConstantValues(double value) {
         this.value = BigDecimal.valueOf(value);
     }
 

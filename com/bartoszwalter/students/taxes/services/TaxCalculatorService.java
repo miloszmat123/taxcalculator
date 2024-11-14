@@ -1,6 +1,6 @@
 package com.bartoszwalter.students.taxes.services;
 
-import com.bartoszwalter.students.taxes.enums.FeePercentValues;
+import com.bartoszwalter.students.taxes.enums.ConstantValues;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -13,23 +13,23 @@ public class TaxCalculatorService {
     }
 
     public BigDecimal getSocialSecurityFee() {
-        return preTaxIncome.multiply(FeePercentValues.SOCIAL_SECURITY.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
+        return preTaxIncome.multiply(ConstantValues.SOCIAL_SECURITY.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
     }
 
     public BigDecimal getHealthInsuranceFee() {
-        return preTaxIncome.multiply(FeePercentValues.HEALTH_INSURANCE.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
+        return preTaxIncome.multiply(ConstantValues.HEALTH_INSURANCE.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
     }
 
     public BigDecimal getSicknessInsuranceFee() {
-        return preTaxIncome.multiply(FeePercentValues.SICKNESS_INSURANCE.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
+        return preTaxIncome.multiply(ConstantValues.SICKNESS_INSURANCE.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
     }
 
     public BigDecimal getCurrentSocialHealthInsuranceFee() {
-        return preTaxIncome.multiply(FeePercentValues.CURRENT_SOCIAL_HEALTH_INSURANCE.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
+        return preTaxIncome.multiply(ConstantValues.CURRENT_SOCIAL_HEALTH_INSURANCE.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
     }
 
     public BigDecimal getPreviousSocialHealthInsuranceFee() {
-        return preTaxIncome.multiply(FeePercentValues.PREVIOUS_SOCIAL_HEALTH_INSURANCE.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
+        return preTaxIncome.multiply(ConstantValues.PREVIOUS_SOCIAL_HEALTH_INSURANCE.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
     }
 
     public BigDecimal getTaxFreeIncome() {
@@ -41,7 +41,7 @@ public class TaxCalculatorService {
     }
 
     public BigDecimal getAdvanceTax() {
-        return preTaxIncome.multiply(FeePercentValues.ADVANCE_TAX.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
+        return preTaxIncome.multiply(ConstantValues.ADVANCE_TAX.getValue()).divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
     }
 
     public BigDecimal getAdvanceTaxPaid() {

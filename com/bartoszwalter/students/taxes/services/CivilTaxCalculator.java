@@ -1,6 +1,6 @@
 package com.bartoszwalter.students.taxes.services;
 
-import com.bartoszwalter.students.taxes.enums.FeePercentValues;
+import com.bartoszwalter.students.taxes.enums.ConstantValues;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -13,7 +13,7 @@ public class CivilTaxCalculator extends TaxCalculatorService {
     @Override
     public BigDecimal getTaxDeductibleExpenses() {
         return getPreTaxIncome()
-                .multiply(FeePercentValues.DEDUCTIBLE_EXPENSES_CIVIL.getValue())
+                .multiply(ConstantValues.DEDUCTIBLE_EXPENSES_CIVIL.getValue())
                 .divide(BigDecimal.valueOf(100), RoundingMode.HALF_UP);
     }
 }

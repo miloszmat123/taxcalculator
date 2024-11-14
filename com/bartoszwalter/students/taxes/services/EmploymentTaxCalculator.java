@@ -1,6 +1,6 @@
 package com.bartoszwalter.students.taxes.services;
 
-import com.bartoszwalter.students.taxes.enums.FeePercentValues;
+import com.bartoszwalter.students.taxes.enums.ConstantValues;
 
 import java.math.BigDecimal;
 
@@ -11,11 +11,11 @@ public class EmploymentTaxCalculator extends TaxCalculatorService {
 
     @Override
     public BigDecimal getTaxDeductibleExpenses() {
-        return FeePercentValues.DEDUCTIBLE_EXPENSES_EMPLOYMENT.getValue();
+        return ConstantValues.DEDUCTIBLE_EXPENSES_EMPLOYMENT.getValue();
     }
 
     @Override
     public BigDecimal getTaxFreeIncome() {
-        return FeePercentValues.TAX_FREE_INCOME.getValue();
+        return ConstantValues.TAX_FREE_INCOME.getValue();
     }
 }
